@@ -108,8 +108,8 @@ def plot_sentiment_comparison():
     
     while True:
         ax.clear()
-        ax.plot(time_series, eve_sentiments, label="Eve", marker="o", linestyle="-", color="blue")
-        ax.plot(time_series, other_sentiments, label="Others", marker="o", linestyle="-", color="red")
+        ax.plot(time_series, eve_sentiments, label="Eve", marker="^", linestyle="-", color="blue")
+        ax.plot(time_series, other_sentiments, label="Others", marker="o", linestyle="-", color="green")
 
         ax.set_title("Sentiment Comparison: Eve vs Others")
         ax.set_xlabel("Time Step")
@@ -127,18 +127,14 @@ def compare_eve_sentiment():
         score for author, scores in author_sentiments.items() if author != "eve" for score in scores
     ]
 
-    if eve_scores:
-        avg_eve = sum(eve_scores) / len(eve_scores)
-    else:
-        avg_eve = None  # No messages from Eve yet
-
-    if other_scores:
-        avg_other = sum(other_scores) / len(other_scores)
-    else:
-        avg_other = None  # No messages from other authors yet
+    avg_eve = sum(eve_scores) / len(eve_scores) if eve_scores else None
+    avg_other = sum(other_scores) / len(other_scores) if other_scores else None
 
     if avg_eve is not None and avg_other is not None:
         logger.info(f"Eve's avg sentiment: {avg_eve:.3f}, Others' avg sentiment: {avg_other:.3f}")
+        time_series.append(len(time_series) + 1)
+        eve_sentiments.append(avg_eve)
+        other_sentiments.append(avg_other)
     elif avg_eve is not None:
         logger.info(f"Eve's avg sentiment: {avg_eve:.3f}, but no other authors' messages to compare.")
     elif avg_other is not None:
@@ -261,6 +257,9 @@ def main():
         except Exception as e:
             logger.error(f"ERROR: Failed to delete DB file: {e}")
             sys.exit(2)
+
+    plot_thread =threading.Thread(target=plot_sentiment_comparison, daemon=True)
+    plot_thread.start()
 
     logger.info("STEP 3. Initialize a new database with an empty table.")
     try:
