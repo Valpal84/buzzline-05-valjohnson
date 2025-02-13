@@ -2192,3 +2192,87 @@
 2025-02-13 16:55:40.130 | ERROR    | __main__:consume_messages_from_kafka:221 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
 2025-02-13 16:55:40.134 | ERROR    | __main__:main:279 - Unexpected error: Invalid file descriptor: -1
 2025-02-13 16:55:40.137 | INFO     | __main__:main:281 - Consumer shutting down.
+2025-02-13 16:55:43.103 | INFO     | __main__:main:178 - {'message': 'I just loved game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:43', 'category': 'gaming', 'sentiment': 0.57, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-13 16:55:43.108 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:43', 'category': 'gaming', 'sentiment': 0.57, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-13 16:55:43.113 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved game! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:43', 'category': 'gaming', 'sentiment': 0.57, 'keyword_mentioned': 'game', 'message_length': 32}
+2025-02-13 16:55:48.118 | INFO     | __main__:main:178 - {'message': 'I just shared Python! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:48', 'category': 'tech', 'sentiment': 0.03, 'keyword_mentioned': 'Python', 'message_length': 38}
+2025-02-13 16:55:48.121 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared Python! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:48', 'category': 'tech', 'sentiment': 0.03, 'keyword_mentioned': 'Python', 'message_length': 38}
+2025-02-13 16:55:48.127 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared Python! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:55:48', 'category': 'tech', 'sentiment': 0.03, 'keyword_mentioned': 'Python', 'message_length': 38}
+2025-02-13 16:55:53.130 | INFO     | __main__:main:178 - {'message': 'I just saw Python! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:53', 'category': 'tech', 'sentiment': 0.58, 'keyword_mentioned': 'Python', 'message_length': 33}
+2025-02-13 16:55:53.132 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw Python! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:53', 'category': 'tech', 'sentiment': 0.58, 'keyword_mentioned': 'Python', 'message_length': 33}
+2025-02-13 16:55:53.135 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw Python! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:53', 'category': 'tech', 'sentiment': 0.58, 'keyword_mentioned': 'Python', 'message_length': 33}
+2025-02-13 16:55:58.138 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:58', 'category': 'travel', 'sentiment': 0.41, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-13 16:55:58.140 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:58', 'category': 'travel', 'sentiment': 0.41, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-13 16:55:58.142 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-13 16:55:58', 'category': 'travel', 'sentiment': 0.41, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-13 16:56:03.145 | INFO     | __main__:main:178 - {'message': 'I just tried travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:03', 'category': 'travel', 'sentiment': 0.21, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 16:56:03.149 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:03', 'category': 'travel', 'sentiment': 0.21, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 16:56:03.155 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:03', 'category': 'travel', 'sentiment': 0.21, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 16:56:08.160 | INFO     | __main__:main:178 - {'message': 'I just saw a trick! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:08', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:08.162 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a trick! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:08', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:08.164 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a trick! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:08', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:13.166 | INFO     | __main__:main:178 - {'message': 'I just shared a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:13', 'category': 'entertainment', 'sentiment': 0.17, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-13 16:56:13.169 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:13', 'category': 'entertainment', 'sentiment': 0.17, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-13 16:56:13.172 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:13', 'category': 'entertainment', 'sentiment': 0.17, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-13 16:56:18.175 | INFO     | __main__:main:178 - {'message': 'I just saw Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:18', 'category': 'tech', 'sentiment': 0.56, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 16:56:18.179 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:18', 'category': 'tech', 'sentiment': 0.56, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 16:56:18.183 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:18', 'category': 'tech', 'sentiment': 0.56, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 16:56:23.188 | INFO     | __main__:main:178 - {'message': 'I just tried travel! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:23', 'category': 'travel', 'sentiment': 0.47, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 16:56:23.190 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried travel! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:23', 'category': 'travel', 'sentiment': 0.47, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 16:56:23.192 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried travel! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:23', 'category': 'travel', 'sentiment': 0.47, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 16:56:28.197 | INFO     | __main__:main:178 - {'message': 'I just saw a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:28', 'category': 'humor', 'sentiment': 0.42, 'keyword_mentioned': 'meme', 'message_length': 32}
+2025-02-13 16:56:28.198 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:28', 'category': 'humor', 'sentiment': 0.42, 'keyword_mentioned': 'meme', 'message_length': 32}
+2025-02-13 16:56:28.199 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:28', 'category': 'humor', 'sentiment': 0.42, 'keyword_mentioned': 'meme', 'message_length': 32}
+2025-02-13 16:56:33.202 | INFO     | __main__:main:178 - {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:33', 'category': 'other', 'sentiment': 0.09, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 16:56:33.206 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:33', 'category': 'other', 'sentiment': 0.09, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 16:56:33.212 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:33', 'category': 'other', 'sentiment': 0.09, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 16:56:38.216 | INFO     | __main__:main:178 - {'message': 'I just loved an app! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:38', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:38.221 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved an app! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:38', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:38.226 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved an app! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 16:56:38', 'category': 'other', 'sentiment': 0.96, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 16:56:43.232 | INFO     | __main__:main:178 - {'message': 'I just shared a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:43', 'category': 'other', 'sentiment': 0.36, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-13 16:56:43.236 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:43', 'category': 'other', 'sentiment': 0.36, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-13 16:56:43.241 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 16:56:43', 'category': 'other', 'sentiment': 0.36, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-02-13 16:56:48.246 | INFO     | __main__:main:178 - {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:48', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-13 16:56:48.247 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:48', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-13 16:56:48.249 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 16:56:48', 'category': 'tech', 'sentiment': 0.09, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-13 16:56:49.592 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 16:56:49.769 | INFO     | __main__:main:236 - Starting Consumer to run continuously.
+2025-02-13 16:56:49.769 | INFO     | __main__:main:237 - Things can fail or get interrupted, so use a try block.
+2025-02-13 16:56:49.770 | INFO     | __main__:main:238 - Moved .env variables into a utils config module.
+2025-02-13 16:56:49.771 | INFO     | __main__:main:240 - STEP 1. Read environment variables using new config functions.
+2025-02-13 16:56:49.772 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 16:56:49.772 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-13 16:56:49.773 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-13 16:56:49.774 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 16:56:49.776 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Projects\buzzline-05-valjohnson\data
+2025-02-13 16:56:49.777 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Projects\buzzline-05-valjohnson\data\buzz.sqlite
+2025-02-13 16:56:49.779 | INFO     | __main__:main:247 - SUCCESS: Read environment variables.
+2025-02-13 16:56:49.780 | INFO     | __main__:main:252 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-13 16:56:49.782 | INFO     | __main__:main:256 - SUCCESS: Deleted database file.
+2025-02-13 16:56:49.787 | INFO     | __main__:main:264 - STEP 3. Initialize a new database with an empty table.
+2025-02-13 16:56:49.789 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-13 16:56:49.792 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-13 16:56:49.804 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Projects\buzzline-05-valjohnson\data\buzz.sqlite.
+2025-02-13 16:56:49.805 | INFO     | __main__:main:271 - STEP 4. Begin consuming and storing messages.
+2025-02-13 16:56:49.806 | INFO     | __main__:consume_messages_from_kafka:169 - Called consume_messages_from_kafka() with:
+2025-02-13 16:56:49.807 | INFO     | __main__:consume_messages_from_kafka:170 -    topic='buzzline'
+2025-02-13 16:56:49.808 | INFO     | __main__:consume_messages_from_kafka:171 -    kafka_url='Localhost:9092'
+2025-02-13 16:56:49.809 | INFO     | __main__:consume_messages_from_kafka:172 -    group='buzz_group'
+2025-02-13 16:56:49.810 | INFO     | __main__:consume_messages_from_kafka:173 -    sql_path=WindowsPath('C:/Projects/buzzline-05-valjohnson/data/buzz.sqlite')
+2025-02-13 16:56:49.811 | INFO     | __main__:consume_messages_from_kafka:174 -    interval_secs=5
+2025-02-13 16:56:49.813 | INFO     | __main__:consume_messages_from_kafka:176 - Step 1. Verify Kafka Services.
+2025-02-13 16:56:49.814 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: Localhost:2181
+2025-02-13 16:56:49.818 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at Localhost:2181.
+2025-02-13 16:56:49.820 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-13 16:56:50.252 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'zjt6xq9hSq6laun0FtEzUA', 'controller_id': 1001}
+2025-02-13 16:56:50.256 | INFO     | __main__:consume_messages_from_kafka:183 - Step 2. Create a Kafka consumer.
+2025-02-13 16:56:50.258 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-13 16:56:50.259 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-13 16:56:50.376 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-13 16:56:50.377 | INFO     | __main__:consume_messages_from_kafka:194 - Step 3. Verify topic exists.
+2025-02-13 16:56:50.378 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: Localhost:9092
+2025-02-13 16:56:50.709 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-13 16:56:50.711 | INFO     | __main__:consume_messages_from_kafka:198 - Kafka topic 'buzzline' is ready.
+2025-02-13 16:56:50.712 | INFO     | __main__:consume_messages_from_kafka:205 - Step 4. Process messages.
+2025-02-13 16:56:50.719 | ERROR    | __main__:consume_messages_from_kafka:221 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
+2025-02-13 16:56:50.721 | ERROR    | __main__:main:279 - Unexpected error: Invalid file descriptor: -1
+2025-02-13 16:56:50.722 | INFO     | __main__:main:281 - Consumer shutting down.
