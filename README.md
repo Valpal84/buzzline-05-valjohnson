@@ -1,4 +1,9 @@
-# buzzline-05-case
+# buzzline-05-valjohnson
+
+## Project introduction
+In this project we're going to use a producer and consumer to view sentiment analysis of several different authors and their messages. We're going to look and see if certain authors have more positive or negative sentiments over others. For this example, I'm going to compare one specific author 'Eve' to the others. 
+
+See instructions below on how to start the producer and consumer to view the files necessary for the project. 
 
 Nearly every streaming analytics system stores processed data somewhere for further analysis, historical reference, or integration with BI tools.
 
@@ -96,17 +101,17 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.kafka_consumer_case
+py -m consumers.kafka_consumer_valjohnson
 OR
-py -m consumers.file_consumer_case
+py -m consumers.file_consumer_valjohnson
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m consumers.kafka_consumer_case
+python3 -m consumers.kafka_consumer_valjohnson
 OR
-python3 -m consumers.file_consumer_case
+python3 -m consumers.file_consumer_valjohnson
 ```
 
 ---
