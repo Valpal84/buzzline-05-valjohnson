@@ -94,14 +94,32 @@ def process_message(message: dict) -> None:
         return None
 
 def compare_eve_sentiment():
-    """Compare Eve's sentiment scores to all other authors."""
+    """Compare Eve's sentiment scores to the average sentiment of all other authors."""
     eve_scores = author_sentiments.get("eve", [])
-    other_scores = [score for author, scores in author_sentiments.items() if author != "eve" for score in scores]
-    
-    if eve_scores and other_scores:
+    other_scores = [
+        score for author, scores in author_sentiments.items() if author != "eve" for score in scores
+    ]
+
+    if eve_scores:
         avg_eve = sum(eve_scores) / len(eve_scores)
+    else:
+        avg_eve = None  # No messages from Eve yet
+
+    if other_scores:
         avg_other = sum(other_scores) / len(other_scores)
+    else:
+        avg_other = None  # No messages from other authors yet
+
+    if avg_eve is not None and avg_other is not None:
         logger.info(f"Eve's avg sentiment: {avg_eve:.3f}, Others' avg sentiment: {avg_other:.3f}")
+    elif avg_eve is not None:
+        logger.info(f"Eve's avg sentiment: {avg_eve:.3f}, but no other authors' messages to compare.")
+    elif avg_other is not None:
+        logger.info(f"No messages from Eve yet. Others' avg sentiment: {avg_other:.3f}")
+    else:
+        logger.info("No messages received from any authors yet.")
+
+
 #####################################
 # Consume Messages from Kafka Topic
 #####################################
