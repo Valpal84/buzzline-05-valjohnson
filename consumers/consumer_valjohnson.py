@@ -30,6 +30,9 @@ import pathlib
 import sys
 from collections import defaultdict
 import nltk
+import matplotlib.pyplot as plt
+import threading
+import time
 
 # import external modules
 from kafka import KafkaConsumer
@@ -49,6 +52,11 @@ nltk.download("vader_lexicon")
 sia = SentimentIntensityAnalyzer()
 
 author_sentiments = defaultdict(list)
+
+time_series = []
+eve_sentiments =[]
+other_sentiments = []
+
 
 #####################################
 # Function to process a single message
@@ -92,6 +100,25 @@ def process_message(message: dict) -> None:
     except Exception as e:
         logger.error(f"Error processing message: {e}")
         return None
+    
+def plot_sentiment_comparison():
+    """Continuously update a live line chart comparing Eve's sentiment to others."""
+    plt.ion()  # Turn on interactive mode
+    fig, ax = plt.subplots()
+    
+    while True:
+        ax.clear()
+        ax.plot(time_series, eve_sentiments, label="Eve", marker="o", linestyle="-", color="blue")
+        ax.plot(time_series, other_sentiments, label="Others", marker="o", linestyle="-", color="red")
+
+        ax.set_title("Sentiment Comparison: Eve vs Others")
+        ax.set_xlabel("Time Step")
+        ax.set_ylabel("Average Sentiment Score")
+        ax.legend()
+        ax.grid(True)
+        
+        plt.draw()
+        plt.pause(2)  # Refresh every 2 seconds
 
 def compare_eve_sentiment():
     """Compare Eve's sentiment scores to the average sentiment of all other authors."""
