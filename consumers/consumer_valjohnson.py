@@ -28,9 +28,12 @@ import json
 import os
 import pathlib
 import sys
+from collections import defaultdict
+import nltk
 
 # import external modules
 from kafka import KafkaConsumer
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 # import from local modules
 import utils.utils_config as config
@@ -42,15 +45,25 @@ from utils.utils_producer import verify_services, is_topic_available
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from consumers.db_sqlite_case import init_db, insert_message
 
+nltk.download("vader_lexicon")
+sia = SentimentIntensityAnalyzer()
+
+author_sentiments = defaultdict(list)
+
 #####################################
 # Function to process a single message
 # #####################################
 
+def analyze_sentiment(text):
+    """Perform sentiment analysis on the given text."""
+    sentiment_score = sia.polarity_scores(text)["compound"]
+    return sentiment_score
 
 def process_message(message: dict) -> None:
     """
     Process and transform a single JSON message.
     Converts message fields to appropriate data types.
+    Performs sentiment analysis and tracks author sentiment scores.
 
     Args:
         message (dict): The JSON message as a Python dictionary.
@@ -58,22 +71,34 @@ def process_message(message: dict) -> None:
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
     try:
+        sentiment_Score = analyze_sentiment(message.get("message", ""))
+
         processed_message = {
             "message": message.get("message"),
             "author": message.get("author"),
             "timestamp": message.get("timestamp"),
             "category": message.get("category"),
-            "sentiment": float(message.get("sentiment", 0.0)),
+            "sentiment": sentiment_score,
             "keyword_mentioned": message.get("keyword_mentioned"),
             "message_length": int(message.get("message_length", 0)),
         }
+
+        author_sentiments[processed_message["author"].lower()].append(sentiment_score)
         logger.info(f"Processed message: {processed_message}")
         return processed_message
     except Exception as e:
         logger.error(f"Error processing message: {e}")
         return None
 
-
+def compare_eve_sentiment():
+    """Compare Eve's sentiment scores to all other authors."""
+    eve_scores = author_sentiments.get("eve", [])
+    other_scores = [score for author, scores in author_sentiments.items() if author != "eve" for score in scores]
+    
+    if eve_scores and other_scores:
+        avg_eve = sum(eve_scores) / len(eve_scores)
+        avg_other = sum(other_scores) / len(other_scores)
+        logger.info(f"Eve's avg sentiment: {avg_eve:.3f}, Others' avg sentiment: {avg_other:.3f}")
 #####################################
 # Consume Messages from Kafka Topic
 #####################################
