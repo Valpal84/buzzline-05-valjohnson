@@ -22,3 +22,4 @@
 {"message": "I just loved a meme! It was boring.", "author": "Bob", "timestamp": "2025-02-13 16:57:13", "category": "humor", "sentiment": 0.42, "keyword_mentioned": "meme", "message_length": 35}
 {"message": "I just shared game! It was boring.", "author": "Eve", "timestamp": "2025-02-13 16:57:18", "category": "gaming", "sentiment": 0.99, "keyword_mentioned": "game", "message_length": 34}
 {"message": "I just saw Python! It was funny.", "author": "Charlie", "timestamp": "2025-02-13 16:57:23", "category": "tech", "sentiment": 0.32, "keyword_mentioned": "Python", "message_length": 32}
+{"message": "I just tried travel! It was weird.", "author": "Eve", "timestamp": "2025-02-13 16:57:28", "category": "travel", "sentiment": 0.73, "keyword_mentioned": "travel", "message_length": 34}
