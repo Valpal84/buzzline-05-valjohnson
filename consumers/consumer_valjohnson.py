@@ -62,20 +62,21 @@ def analyze_sentiment(text):
 def process_message(message: dict) -> None:
     """
     Process and transform a single JSON message.
-    Converts message fields to appropriate data types.
     Performs sentiment analysis and tracks author sentiment scores.
-
-    Args:
-        message (dict): The JSON message as a Python dictionary.
     """
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
+
     try:
-        sentiment_Score = analyze_sentiment(message.get("message", ""))
+        text = message.get("message", "")
+        if not text:  # Ensure message text exists
+            raise ValueError("Empty message text received.")
+
+        sentiment_score = analyze_sentiment(text)  # Get sentiment score
 
         processed_message = {
-            "message": message.get("message"),
-            "author": message.get("author"),
+            "message": text,
+            "author": message.get("author", "Unknown"),  # Default if missing
             "timestamp": message.get("timestamp"),
             "category": message.get("category"),
             "sentiment": sentiment_score,
@@ -85,7 +86,9 @@ def process_message(message: dict) -> None:
 
         author_sentiments[processed_message["author"].lower()].append(sentiment_score)
         logger.info(f"Processed message: {processed_message}")
+        compare_eve_sentiment()
         return processed_message
+
     except Exception as e:
         logger.error(f"Error processing message: {e}")
         return None
